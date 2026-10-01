@@ -1,11 +1,281 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+  <!-- 1. Премиальная Шапка (Header) -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[#F9F8F6]/90 backdrop-blur-md border-b border-stone-200/80 transition-all">
+    <div class="mx-auto max-w-7xl px-6 lg:px-12 h-20 flex items-center justify-between">
+      <a href="/" class="flex flex-col">
+        <span class="font-display text-2xl font-bold tracking-tight text-stone-900">Pacific Partners Tokyo</span>
+        <span class="text-[10px] text-stone-500 uppercase tracking-widest -mt-1">DMC Туроператор по Японии с 2006 года</span>
+      </a>
+
+      <!-- Меню с точным сохранением всех ссылок Тильды -->
+      <nav class="hidden lg:flex items-center gap-7 text-xs font-semibold uppercase tracking-wider text-stone-700">
+        <a href="/tury" class="hover:text-[#B82626] transition-colors">Туры</a>
+        <a href="/specialnye-predlozheniya" class="hover:text-[#B82626] transition-colors text-[#B82626]">Спецпредложения</a>
+        <a href="/tury/medicinskiy-turism" class="hover:text-[#B82626] transition-colors">Медицинский</a>
+        <a href="/tury/delovoi-turizm" class="hover:text-[#B82626] transition-colors">MICE</a>
+        <a href="/o-yaponii" class="hover:text-[#B82626] transition-colors">О Японии</a>
+        <a href="/visa-v-yaponiju" class="hover:text-[#B82626] transition-colors">Визы</a>
+        <a href="/kontakty" class="hover:text-[#B82626] transition-colors">Контакты</a>
+      </nav>
+
+      <!-- Быстрые контакты -->
+      <div class="flex items-center gap-3">
+        <a href="https://api.whatsapp.com/send/?phone=819099661555" target="_blank" class="hidden sm:inline-flex items-center px-4 py-2 rounded-full border border-stone-300 text-xs font-semibold hover:border-emerald-600 hover:text-emerald-700 transition-colors">
+          WhatsApp
+        </a>
+        <a href="#tours" class="px-5 py-2.5 rounded-full bg-[#B82626] text-white text-xs font-semibold uppercase tracking-wider hover:bg-[#8B1515] transition-colors shadow-sm">
+          Выбрать тур
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="pt-20">
+    <!-- 2. Главный экран (Hero) -->
+    <section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden bg-[#111114] text-white py-20 px-6">
+      <div class="absolute inset-0 z-0 opacity-40 bg-[radial-gradient(#ffffff0a_1px,transparent_1px)] [background-size:24px_24px]"></div>
+      <!-- Атмосферная фоновая фотография Токио -->
+      <img 
+        src="https://static.tildacdn.com/tild3932-3638-4533-b235-373438376633/ppt-tokyo-min.webp" 
+        alt="Токио" 
+        class="absolute inset-0 w-full h-full object-cover object-center opacity-30 select-none pointer-events-none"
+      />
+
+      <div class="relative z-10 max-w-5xl mx-auto text-center space-y-6">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs text-[#FFE066] uppercase tracking-widest font-mono">
+          <span>Лицензия Правительства Токио No. 3-8192</span>
+        </div>
+
+        <h1 class="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight">
+          Туроператор по Японии <br />
+          <span class="italic text-stone-300 font-normal">без цепочки посредников</span>
+        </h1>
+
+        <p class="max-w-2xl mx-auto text-base sm:text-xl text-stone-300 font-light leading-relaxed">
+          Организуем путешествия под ключ с офисом в Токио с 2006 года: авторские программы, прямые контракты с лучшими отелями, скоростной Синкансэн и персональные гиды.
+        </p>
+
+        <div class="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="#flagship" class="w-full sm:w-auto px-8 py-4 rounded-full bg-[#B82626] hover:bg-[#8B1515] text-white text-sm font-semibold tracking-wider transition-all shadow-lg shadow-red-950/50">
+            Флагманский тур 2026 →
+          </a>
+          <a href="#services" class="w-full sm:w-auto px-8 py-4 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 text-white text-sm font-semibold transition-all">
+            Все направления
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. ФЛАГМАНСКИЙ ТУР (Мостик на наш 3D-лендинг на Cloudflare) -->
+    <section id="flagship" class="py-20 lg:py-28 px-6 bg-white border-b border-stone-200">
+      <div class="max-w-7xl mx-auto">
+        <div class="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-[#B82626] mb-3">
+          <span>Главная премьера сезона</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center bg-[#FDFBF7] border border-stone-200 rounded-2xl p-6 sm:p-10 shadow-sm">
+          <div class="lg:col-span-6 space-y-5">
+            <span class="px-3 py-1 bg-[#B82626]/10 text-[#B82626] text-xs font-bold rounded-full uppercase">
+              7 дней / 6 ночей • Еженедельно
+            </span>
+
+            <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-900 leading-tight">
+              «Япония: между традицией и будущим»
+            </h2>
+
+            <p class="text-stone-600 text-sm sm:text-base leading-relaxed font-light">
+              Авторский маршрут по золотому треугольнику Японии: неоновые кварталы Токио, полный день в Диснейленде, переезд на Синкансэне мимо горы Фудзи, тысячелетние храмы Киото и священные олени Нары.
+            </p>
+
+            <div class="space-y-2 pt-2 text-xs sm:text-sm text-stone-700">
+              <div class="flex items-center gap-2">✓ Отели 3*–4* в центрах Токио и Киото с завтраками</div>
+              <div class="flex items-center gap-2">✓ Русскоязычный лицензированный гид на экскурсиях</div>
+              <div class="flex items-center gap-2">✓ Интерактивная 3D-панорама и расчет в любых валютах</div>
+            </div>
+
+            <div class="pt-4 flex items-center gap-4">
+              <!-- Ссылка прямо на наш созданный поддомен Cloudflare -->
+              <a href="https://tour.ppt-japan.com/" class="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-[#B82626] hover:bg-[#8B1515] text-white text-sm font-semibold transition-colors shadow-md">
+                <span>Открыть интерактивный тур</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6">
+            <a href="https://tour.ppt-japan.com/" class="block relative rounded-xl overflow-hidden shadow-xl aspect-[16/10] group">
+              <img 
+                src="/images/japan-map-3d.jpg" 
+                alt="3D панорама тура в Японию" 
+                class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                onError="this.src='https://static.tildacdn.com/tild3932-3638-4533-b235-373438376633/ppt-tokyo-min.webp'"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent flex items-end p-6">
+                <span class="text-white text-xs font-mono uppercase tracking-widest bg-white/20 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/30">
+                  Интерактивная 3D-диорама маршрута
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Сезоны Японии (Хару, Нацу, Аки, Фую из Тильды) -->
+    <section id="tours" class="py-20 px-6 bg-[#F9F8F6]">
+      <div class="max-w-7xl mx-auto">
+        <div class="text-center max-w-3xl mx-auto mb-14 space-y-3">
+          <h2 class="font-display text-3xl sm:text-5xl font-bold text-stone-900">
+            Япония в 4 сезонах
+          </h2>
+          <p class="text-stone-600 text-sm sm:text-base font-light">
+            Каждое время года в Японии — это отдельный мир со своими фестивалями, кухней и красками природы.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Весна -->
+          <div class="bg-white rounded-xl overflow-hidden border border-stone-200 shadow-xs flex flex-col justify-between">
+            <div class="h-48 overflow-hidden relative">
+              <img src="https://static.tildacdn.com/tild3961-3130-4533-a639-376231353336/1-min.webp" alt="Весна в Японии" class="w-full h-full object-cover" />
+              <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-xs px-2.5 py-1 rounded-md text-xs font-bold text-stone-900">Весна (Хару)</span>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+              <p class="text-xs text-stone-600 leading-relaxed font-light">
+                Сезон цветения сакуры в парках Токио и древних садах Киото.
+              </p>
+              <a href="/tury" class="text-xs font-bold text-[#B82626] hover:underline">Посмотреть туры →</a>
+            </div>
+          </div>
+
+          <!-- Лето -->
+          <div class="bg-white rounded-xl overflow-hidden border border-stone-200 shadow-xs flex flex-col justify-between">
+            <div class="h-48 overflow-hidden relative">
+              <img src="https://static.tildacdn.com/tild3866-3234-4461-a430-313466623763/2-min.webp" alt="Лето в Японии" class="w-full h-full object-cover" />
+              <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-xs px-2.5 py-1 rounded-md text-xs font-bold text-stone-900">Лето (Нацу)</span>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+              <p class="text-xs text-stone-600 leading-relaxed font-light">
+                Праздники мацури, фестивали фейерверков и восхождение на вулкан Фудзи.
+              </p>
+              <a href="/tury" class="text-xs font-bold text-[#B82626] hover:underline">Посмотреть туры →</a>
+            </div>
+          </div>
+
+          <!-- Осень -->
+          <div class="bg-white rounded-xl overflow-hidden border border-stone-200 shadow-xs flex flex-col justify-between">
+            <div class="h-48 overflow-hidden relative">
+              <img src="https://static.tildacdn.com/tild6264-6561-4864-b535-353366623263/3-min.webp" alt="Осень в Японии" class="w-full h-full object-cover" />
+              <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-xs px-2.5 py-1 rounded-md text-xs font-bold text-stone-900">Осень (Аки)</span>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+              <p class="text-xs text-stone-600 leading-relaxed font-light">
+                Сезон багряных кленов момидзи, ясная погода и хризантемы.
+              </p>
+              <a href="/tury" class="text-xs font-bold text-[#B82626] hover:underline">Посмотреть туры →</a>
+            </div>
+          </div>
+
+          <!-- Зима -->
+          <div class="bg-white rounded-xl overflow-hidden border border-stone-200 shadow-xs flex flex-col justify-between">
+            <div class="h-48 overflow-hidden relative">
+              <img src="https://static.tildacdn.com/tild6332-3635-4164-b266-626531643165/4-min.webp" alt="Зима в Японии" class="w-full h-full object-cover" />
+              <span class="absolute top-3 left-3 bg-white/90 backdrop-blur-xs px-2.5 py-1 rounded-md text-xs font-bold text-stone-900">Зима (Фую)</span>
+            </div>
+            <div class="p-5 flex-1 flex flex-col justify-between space-y-4">
+              <p class="text-xs text-stone-600 leading-relaxed font-light">
+                Горячие источники онсэн под открытым небом, заснеженный Хоккайдо и лыжи.
+              </p>
+              <a href="/tury" class="text-xs font-bold text-[#B82626] hover:underline">Посмотреть туры →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Категории услуг компании (Все ссылки из Тильды сохранены!) -->
+    <section id="services" class="py-20 px-6 bg-white border-b border-stone-200">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="font-display text-3xl sm:text-4xl font-bold text-stone-900 mb-10 text-center">
+          Направления работы Pacific Partners Tokyo
+        </h2>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+          <a href="/tury/individualnye-tury" class="p-6 rounded-xl border border-stone-200 hover:border-[#B82626] hover:shadow-md transition-all group">
+            <div class="text-2xl mb-3">⛩️</div>
+            <h3 class="text-sm font-bold text-stone-900 group-hover:text-[#B82626] transition-colors">Индивидуальные туры</h3>
+            <p class="text-xs text-stone-500 mt-2 font-light">Маршруты под ключ по любым городам Японии</p>
+          </a>
+
+          <a href="/tury/bazovye-ekskursii" class="p-6 rounded-xl border border-stone-200 hover:border-[#B82626] hover:shadow-md transition-all group">
+            <div class="text-2xl mb-3">🗼</div>
+            <h3 class="text-sm font-bold text-stone-900 group-hover:text-[#B82626] transition-colors">Экскурсии</h3>
+            <p class="text-xs text-stone-500 mt-2 font-light">Токио, Киото, Нара, Камакура с гидами</p>
+          </a>
+
+          <a href="/tury/individualnye-transfery" class="p-6 rounded-xl border border-stone-200 hover:border-[#B82626] hover:shadow-md transition-all group">
+            <div class="text-2xl mb-3">🚐</div>
+            <h3 class="text-sm font-bold text-stone-900 group-hover:text-[#B82626] transition-colors">Трансферы</h3>
+            <p class="text-xs text-stone-500 mt-2 font-light">Аэропорты Ханэда, Нарита, Кансай (KIX)</p>
+          </a>
+
+          <a href="/tury/medicinskiy-turism" class="p-6 rounded-xl border border-stone-200 hover:border-[#B82626] hover:shadow-md transition-all group">
+            <div class="text-2xl mb-3">🏥</div>
+            <h3 class="text-sm font-bold text-stone-900 group-hover:text-[#B82626] transition-colors">Медтуризм</h3>
+            <p class="text-xs text-stone-500 mt-2 font-light">Диагностика Check-up и клиники Японии</p>
+          </a>
+
+          <a href="/tury/delovoi-turizm" class="p-6 rounded-xl border border-stone-200 hover:border-[#B82626] hover:shadow-md transition-all group">
+            <div class="text-2xl mb-3">💼</div>
+            <h3 class="text-sm font-bold text-stone-900 group-hover:text-[#B82626] transition-colors">MICE и Бизнес</h3>
+            <p class="text-xs text-stone-500 mt-2 font-light">Деловые визиты, выставки и делегации</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 6. Футер портала -->
+  <footer class="bg-[#0D0D11] text-stone-400 py-16 px-6 text-xs">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 border-b border-stone-800 pb-12">
+      <div class="space-y-3">
+        <span class="font-display text-xl font-bold text-white tracking-wider">Pacific Partners Tokyo</span>
+        <p class="font-light leading-relaxed">Официальный лицензированный туроператор в Японии с 2006 года. Регистрационный номер No. 3-8192.</p>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold uppercase tracking-wider mb-3">Туры в Японию</h4>
+        <ul class="space-y-2">
+          <li><a href="/tury" class="hover:text-white transition-colors">Каталог туров</a></li>
+          <li><a href="/specialnye-predlozheniya" class="hover:text-white transition-colors">Специальные предложения</a></li>
+          <li><a href="https://tour.ppt-japan.com/" class="hover:text-white transition-colors text-[#FFE066]">Тур «Между традицией и будущим»</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-white font-semibold uppercase tracking-wider mb-3">Полезно знать</h4>
+        <ul class="space-y-2">
+          <li><a href="/visa-v-yaponiju" class="hover:text-white transition-colors">Виза в Японию</a></li>
+          <li><a href="/o-yaponii/pamyatka-turistu" class="hover:text-white transition-colors">Памятка туристу</a></li>
+          <li><a href="/o-yaponii" class="hover:text-white transition-colors">О Японии</a></li>
+        </ul>
+      </div>
+
+      <div class="space-y-2">
+        <h4 class="text-white font-semibold uppercase tracking-wider mb-3">Офис в Токио</h4>
+        <p><a href="tel:+8105068712292" class="text-white font-mono hover:underline">+81 (0) 50-6871-2292</a></p>
+        <p><a href="mailto:info@ppt-japan.com" class="hover:underline">info@ppt-japan.com</a></p>
+        <p class="font-light">Level 9, Ariake Frontier Building Tower B, 3-7-26 Ariake, Koto-ku, Tokyo, 135-0063, Japan</p>
+      </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto pt-6 flex flex-col sm:flex-row items-center justify-between text-stone-500">
+      <p>© 2006–{new Date().getFullYear()} Pacific Partners Tokyo Co., Ltd. Все права защищены.</p>
+      <p>Made with Japanese Omotenashi</p>
+    </div>
+  </footer>
 </Layout>

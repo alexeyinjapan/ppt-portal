@@ -1,23 +1,93 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Туры в Японию под ключ — туроператор Pacific Partners Tokyo",
+  description = "Pacific Partners Tokyo — официальный туроператор по Японии с опытом более 20 лет. Авторские туры, индивидуальные маршруты, визовая поддержка и бронирование отелей."
+} = Astro.props;
+---
+
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
+<html lang="ru" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href="https://ppt-japan.com/" />
+    
+    <!-- OpenGraph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content="https://ppt-japan.com/" />
+    <meta property="og:type" content="website" />
+    <link rel="shortcut icon" href="https://static.tildacdn.com/tild3063-6236-4966-a563-383832346133/favicon.ico" type="image/x-icon"/>
+
+    <!-- Google Fonts: Cormorant Garamond & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Schema.org Microdata из вашей Тильды -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "TravelAgency",
+      "name": "Pacific Partners Tokyo Co., Ltd",
+      "url": "https://ppt-japan.com/",
+      "logo": "https://static.tildacdn.com/tild3333-6134-4166-a431-666334313362/Logo-tr1.png",
+      "telephone": "+81-50-6871-2292",
+      "email": "info@ppt-japan.com",
+      "foundingDate": "2006",
+      "priceRange": "$$$",
+      "currenciesAccepted": "USD",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Level 9, Ariake Frontier Building Tower B, 3-7-26 Ariake",
+        "addressLocality": "Koto-ku",
+        "addressRegion": "Tokyo",
+        "postalCode": "135-0063",
+        "addressCountry": "JP"
+      }
+    }
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script is:inline>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-57FLQ9XR');
+    </script>
+
+    <!-- Google Analytics (GA4) -->
+    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-RRHB8S30GR"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RRHB8S30GR');
+    </script>
+
+    <!-- Yandex.Metrika -->
+    <script is:inline>
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+      ym(112327392, "init", { clickmap:true, trackLinks:true, accurateTrackBounce:true, webvisor:true });
+    </script>
+  </head>
+
+  <body class="bg-[#F9F8F6] text-[#1C1C1E] font-sans antialiased selection:bg-[#B82626] selection:text-white">
+    <slot />
+  </body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
+<style is:global>
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Cormorant Garamond', serif;
+  }
 </style>
